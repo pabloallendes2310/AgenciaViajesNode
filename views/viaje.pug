@@ -1,0 +1,35 @@
+extends ./layout/index
+block  contenido 
+    main.container.my-5
+        .row
+
+            .col-md-5
+                img(src=`/img/destinos_${viaje.imagen}_ln.jpg`, alt="imagen viajes" class="img-fluid")
+            .col-md-7
+                h1= viaje .titulo
+                p
+                    svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewbox='0 0 24 24' fill='none' stroke='#ff2d55' stroke-width='1' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z')
+                        path(d='M16 3l0 4')
+                        path(d='M8 3l0 4')
+                        path(d='M4 11l16 0')
+                        path(d='M8 15h2v2h-2z')
+                    |  #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+
+                p    
+                    svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewbox='0 0 24 24' fill='none' stroke='#dc135f' stroke-width='1' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0')
+                        path(d='M6 21v-2a4 4 0 0 1 4 -4h4')
+                        path(d='M15 19l2 2l4 -4')
+                    |  #{viaje.disponibles} Disponibles 
+
+                p    
+                    svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewbox='0 0 24 24' fill='none' stroke='#dc135f' stroke-width='1' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0')
+                        path(d='M13.867 9.75c-.246 -.48 -.708 -.769 -1.2 -.75h-1.334c-.736 0 -1.333 .67 -1.333 1.5c0 .827 .597 1.499 1.333 1.499h1.334c.736 0 1.333 .671 1.333 1.5c0 .828 -.597 1.499 -1.333 1.499h-1.334c-.492 .019 -.954 -.27 -1.2 -.75')
+                        path(d='M12 7v2')
+                        path(d='M12 15v2')
+
+                    |  #{viaje.precio} Dolares 
+
+                p= viaje.descripcion
